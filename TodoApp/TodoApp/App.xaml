@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+             x:Class="TodoApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="colorPrimary">#111</Color>
+            <Color x:Key="colorPrimaryDark">#000</Color>
+            <Color x:Key="colorAccent">#ccc</Color>
+            <Color x:Key="colorBackground">#333</Color>
+            <Color x:Key="colorText">#fff</Color>
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="MasterDetailPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="TabbedPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="CarouselPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="TemplatedPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="ScrollView">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="TemplatedView">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="ContentPresenter">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="AbsoluteLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="FlexLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="RelativeLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+                <Setter Property="BorderColor" Value="{StaticResource colorText}"/>
+                <Setter Property="BorderWidth" Value="2"/>
+            </Style>
+            <Style TargetType="ImageButton" x:Key="RoundedButton">
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource colorBackground}"/>
+                <Setter Property="BorderColor" Value="{StaticResource colorText}"/>
+                <Setter Property="BorderWidth" Value="2"/>
+            </Style>
+            
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="DatePicker">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="TimePicker">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+                <Setter Property="TitleColor" Value="{StaticResource colorText}"/>
+            </Style>
+            <Style TargetType="SearchBar">
+                <Setter Property="TextColor" Value="{StaticResource colorText}"/>
+                <Setter Property="PlaceholderColor" Value="{StaticResource colorText}"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

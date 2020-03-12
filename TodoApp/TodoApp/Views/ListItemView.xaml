@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Visual="Material" Title="{Binding Title}"
+             x:Class="TodoApp.Views.ListItemView">
+    <AbsoluteLayout>
+        <StackLayout Padding="10" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <SearchBar Text="{Binding SearchText}" Placeholder="Search your item" SearchCommand="{Binding SearchCommand}"/>
+            <ListView HorizontalOptions="StartAndExpand" ItemsSource="{Binding ListItems}" HasUnevenRows="True" x:Name="lstItems">
+                <ListView.Behaviors>
+                    <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding EditCommand}" EventArgsParameterPath="Item"/>
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell x:Name="item">
+                            <Frame Margin="10" CornerRadius="20">
+                                <Grid RowSpacing="0" ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Title}" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="{Binding Description}" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                                    <ImageButton  Style="{StaticResource RoundedButton}" Margin="10" Source="trash.png"
+                                                  BorderColor="Red"
+                                                  WidthRequest="50" HeightRequest="50" Aspect="Fill"
+                                                  Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"
+                                                  BindingContext="{Binding Source={x:Reference lstItems}, Path=BindingContext}"
+                                                  Command="{Binding DeleteCommand}"
+                                                  CommandParameter="{Binding Source={x:Reference item}, Path=BindingContext}"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <ImageButton Style="{StaticResource RoundedButton}" Margin="20" Source="add.png" Aspect="AspectFit"
+                     Command="{Binding AddCommand}"
+                     AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,120,120"/>
+    </AbsoluteLayout>
+</ContentPage>
